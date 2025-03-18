@@ -1,14 +1,9 @@
-<!--index.html-->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta name="viewport" 
-          content="width=device-width, 
-                   initial-scale=1.0" />
-    <link rel="stylesheet" 
-          href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
     <title>Password Strength Checker</title>
 </head>
@@ -17,16 +12,27 @@
     <div class="group">
         <h1 id="top">Test Your Password</h1>
         <h1>Password Strength Checker</h1>
-        <label for="">Password</label>
-        <input type="password" 
-               id="password"
-               placeholder="Type your password here" />
-        <label for="">
-              Strength of password
-          </label>
+
+        <!-- Password Input with Visibility Toggle -->
+        <label for="password">Password</label>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Type your password here" />
+            <span id="toggle-password">👁️</span>
+        </div>
+
+        <!-- Strength Indicator -->
+        <label>Strength of password</label>
         <div class="power-container">
             <div id="power-point"></div>
         </div>
+
+        <!-- Text Feedback for Strength -->
+        <p id="strength-text">Strength: Too Weak</p>
+        <p id="suggestions" style="color: red;"></p>
+
+        <!-- Buttons for Generating & Copying Password -->
+        <button id="generate-password">Generate Strong Password</button>
+        <button id="copy-password">📋 Copy Password</button>
     </div>
 </body>
 
